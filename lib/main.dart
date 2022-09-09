@@ -11,6 +11,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+
   
   @override
   Widget build(BuildContext context) {
@@ -21,26 +22,28 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
           title: 'Clans',
           theme: ThemeData(
+            fontFamily: 'Poppins',
             brightness: Brightness.light,
             primarySwatch: Colors.grey,
             primaryColor: Colors.black,
             colorScheme: ColorScheme.light(
               primary: Color(0xff7ED4CB),
               secondary: Colors.black,
-              background: Colors.white,
+              background: Color(0xfffafafa),
               error: Colors.red,
             ),
             dividerColor: Colors.black12,
             iconTheme: IconThemeData(color: Colors.black)
           ),
           darkTheme: ThemeData(
+            fontFamily: 'Poppins',
             brightness: Brightness.dark,
             primarySwatch: Colors.grey,
             primaryColor: Colors.white,
             colorScheme: ColorScheme.dark(
               primary: Color(0xff7ED4CB),
               secondary: Colors.white,
-              background: Colors.black,
+              background: Color(0xff424242),
               error: Colors.red,
             ),
             dividerColor: Colors.black12,

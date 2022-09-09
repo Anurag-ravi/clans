@@ -28,7 +28,8 @@ class _MyAppbarState extends State<MyAppbar> {
               flexibleSpace: FlexibleSpaceBar(
                 title: Text(
                   'Clans',
-                  style: TextStyle(fontSize: 40,color: Colors.white),
+                  style: TextStyle(fontSize: 40,
+                  color: themenotifier.isDark? getPrimary(context) : Colors.white),
                 ),
                 centerTitle: true,
                 titlePadding: EdgeInsets.only(bottom: 0),

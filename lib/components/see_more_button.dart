@@ -4,9 +4,10 @@ import 'package:clans/utilities/colors.dart';
 import 'package:flutter/material.dart';
 
 class SeeMore extends StatelessWidget {
-  const SeeMore({ Key? key,required this.text, required this.color }) : super(key: key);
+  const SeeMore({ Key? key,required this.text, required this.color, this.isWhite=false }) : super(key: key);
   final String text;
   final Color color;
+  final bool isWhite;
   @override
   Widget build(BuildContext context) {
     double deviceWidth = MediaQuery.of(context).size.width;
@@ -17,7 +18,7 @@ class SeeMore extends StatelessWidget {
           borderRadius: BorderRadius.circular(deviceWidth * 0.05),
           color: color
       ),
-      child: Center(child: Text(text)),
+      child: Center(child: Text(text,style: TextStyle(color: isWhite ? Colors.white : getSecondary(context)),)),
     );
   }
 }

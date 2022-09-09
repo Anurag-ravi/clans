@@ -10,11 +10,12 @@ class Member extends StatelessWidget {
   final String name;
   @override
   Widget build(BuildContext context) {
+    bool th = Theme.of(context).brightness == Brightness.dark ? true : false;
     double deviceWidth = MediaQuery.of(context).size.width;
     return Container(
       margin: EdgeInsets.symmetric(vertical: 5),
       decoration: BoxDecoration(
-          color: Colors.black12,
+          color: th ? Colors.grey[800] : Colors.grey[200],
           borderRadius: BorderRadius.circular(20),
           ),
       child: Padding(
@@ -46,12 +47,11 @@ class Member extends StatelessWidget {
                     name,
                     style: TextStyle(
                       fontSize: deviceWidth * 0.08,
-                      fontWeight: FontWeight.w500,
-                      color: getPrimary(context),
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   SizedBox(height: 5),
-                  SeeMore(text: "chat >>", color: Color(0xffFAD901))
+                  SeeMore(text: "chat >>", color: Color(0xffFF4A4A), isWhite: true)
                 ],
               ),
             ),

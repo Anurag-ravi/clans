@@ -9,11 +9,12 @@ class Chat extends StatelessWidget {
   final String message;
   @override
   Widget build(BuildContext context) {
+    bool th = Theme.of(context).brightness == Brightness.dark ? true : false;
     double deviceWidth = MediaQuery.of(context).size.width;
     return Container(
       margin: EdgeInsets.symmetric(vertical: 5),
       decoration: BoxDecoration(
-        color: Colors.black12,
+        color: th ? Colors.grey[800] : Colors.grey[200],
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
@@ -26,17 +27,20 @@ class Chat extends StatelessWidget {
               children: [
                 Text(name,
                     style: TextStyle(
-                        fontSize: deviceWidth * 0.07,
-                        color: Color(0xffee5f31),),),
+                        fontSize: deviceWidth * 0.05,
+                        fontWeight: FontWeight.w700,),),
+                        SizedBox(height: 5,),
                 Text(message,
                     style: TextStyle(
-                      fontSize: deviceWidth * 0.05,
+                      fontSize: deviceWidth * 0.04,
+                      fontWeight: FontWeight.w300
                     )),
               ],
             ),
             SeeMore(
-              color: Color(0xffFAD901),
+              color: Color(0xffFF4A4A),
               text: "Reply",
+              isWhite: true,
             )
           ],
         ),

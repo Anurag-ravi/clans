@@ -9,6 +9,7 @@ class ActivityCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double deviceWidth = MediaQuery.of(context).size.width;
+    bool isDark = Theme.of(context).brightness == Brightness.dark ? true : false;
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 5),
       width: deviceWidth * 0.6,
@@ -18,10 +19,9 @@ class ActivityCard extends StatelessWidget {
             image: AssetImage(asset),
             fit: BoxFit.cover,
           ),
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(15),
           border:
-              // Border.all(color: Color(0xffffd800), width: 4)),
-              Border.all(color: Color(0xffee5f31), width: 3)),
+              Border.all(color: isDark ? Color(0xff424242) : Color(0xffeeeeee), width: 4)),
       child: Center(
         child: Container(
           width: deviceWidth * 0.45,
@@ -33,7 +33,7 @@ class ActivityCard extends StatelessWidget {
               name,
               style: TextStyle(
                 fontSize: deviceWidth * 0.06,
-                color: Color(0xffffd800),
+                color: Colors.white,
               ),
               textAlign: TextAlign.center,
             ),

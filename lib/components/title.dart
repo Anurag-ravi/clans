@@ -1,3 +1,4 @@
+import 'package:clans/utilities/colors.dart';
 import 'package:flutter/material.dart';
 
 class MyTitle extends StatelessWidget {
@@ -12,8 +13,8 @@ class MyTitle extends StatelessWidget {
           title,
           style: TextStyle(
               fontSize: deviceWidth * 0.09,
-              color: Color(0xffFAD901),
-              fontWeight: FontWeight.w500),
+              color: getPrimary(context),
+              fontWeight: FontWeight.w600),
         ),
       );
   }

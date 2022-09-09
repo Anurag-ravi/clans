@@ -16,14 +16,14 @@ class Achievements extends StatelessWidget {
   Widget build(BuildContext context) {
     double deviceWidth = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 30, top: 10, bottom: 10),
+      padding: const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(achievement, style: TextStyle(fontSize: deviceWidth * 0.05)),
           Container(
-            width: deviceWidth * 0.2,
-            height: deviceWidth * 0.2,
+            width: deviceWidth * 0.18,
+            height: deviceWidth * 0.18,
             decoration: BoxDecoration(
                 image: DecorationImage(image: AssetImage("assets/shield.png"))),
             child: Center(
@@ -31,7 +31,9 @@ class Achievements extends StatelessWidget {
                 rank,
                 style: TextStyle(
                     fontSize: deviceWidth * factor,
-                    fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white
+                    ),
               ),
             ),
           ),
